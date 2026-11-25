@@ -1,0 +1,136 @@
+*,
+*:before,
+*:after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    /* Темный фон с красивым паттерном (не зависит от интернета) */
+    background-color: #1e293b;
+    background-image: 
+        radial-gradient(circle at 15% 50%, rgba(16, 185, 129, 0.15), transparent 25%),
+        radial-gradient(circle at 85% 30%, rgba(59, 130, 246, 0.15), transparent 25%),
+        url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    background-size: cover, cover, auto;
+    background-position: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.container {
+    width: 40%;
+    top: 50%;
+    left: 50%;
+    background: #ffffff; /* Белая карточка */
+    border-radius: 15px;
+    min-width: 450px;
+    position: absolute;
+    min-height: 100px;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4); /* Более выраженная тень */
+    padding-bottom: 20px;
+}
+
+#newtask {
+    position: relative;
+    padding: 30px 20px;
+    display: flex;
+    gap: 10px;
+}
+
+#newtask input {
+    width: 85%;
+    height: 50px;
+    padding: 12px 20px;
+    color: #1e293b;
+    font-weight: 500;
+    border-radius: 8px;
+    font-size: 16px;
+    border: 2px solid #cbd5e1;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+#newtask input:focus {
+    border-color: #10b981;
+}
+
+#newtask button {
+    width: 50px;
+    height: 50px;
+    border-radius: 8px;
+    background-color: #10b981; /* Зеленая кнопка */
+    border: none;
+    color: #ffffff;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s;
+}
+
+#newtask button:hover {
+    background-color: #059669;
+}
+
+#newtask button svg {
+    width: 24px;
+    height: 24px;
+}
+
+#tasks {
+    border-radius: 10px;
+    width: 100%;
+    position: relative;
+    padding: 0 20px;
+}
+
+/* Стили для добавленных задач (сделал их заметными) */
+.task {
+    border-radius: 8px;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid #e2e8f0;
+    background-color: #f8fafc;
+    height: 55px;
+    margin-bottom: 10px;
+    padding: 5px 15px;
+    display: flex;
+    transition: background-color 0.2s, transform 0.2s;
+}
+
+.task:hover {
+    background-color: #f1f5f9;
+    transform: translateX(5px); /* Легкий сдвиг при наведении */
+}
+
+.task span {
+    font-size: 16px;
+    color: #1e293b;
+    font-weight: 500;
+}
+
+.task button {
+    background-color: transparent;
+    color: #ef4444; /* Красная иконка */
+    border: none;
+    cursor: pointer;
+    height: 100%;
+    width: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: color 0.3s, transform 0.2s;
+}
+
+.task button:hover {
+    color: #dc2626;
+    transform: scale(1.15);
+}
+
+.task button svg {
+    width: 20px;
+    height: 20px;
+}

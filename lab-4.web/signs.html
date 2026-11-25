@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<title>Дорожные знаки</title>
+<link rel="stylesheet" href="https://code.jquery.com/ui/1.14.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script src="https://code.jquery.com/ui/1.14.1/jquery-ui.js"></script>
+    <style>
+       .tooltip {
+            position: relative;
+        }
+        .tooltip .ui-tooltip {
+            position: absolute;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            padding: 5px;
+            z-index: 1;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            font-size: 14px;
+        }
+        .signs-row {
+            text-align: center;
+            margin: 30px 0;   
+        }
+        .signs-row img {
+            width: 120px;     
+            height: 120px;    
+            margin: 0 15px;    
+            vertical-align: middle;
+            cursor: pointer;
+        }
+    </style>
+    <script>
+        $(function () {
+            $(document).tooltip({
+                items: "img",
+                content: function () {
+                    var $element = $(this);
+                    if ($element.is("img")) {
+                        return $element.data('hint');
+                    }
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    <p class="signs-row">
+        <img src="img/signs/1_15.svg" class="tooltip" alt="Скользкая дорога"
+             data-hint="1.15 «Скользкая дорога»">
+        <img src="img/signs/1_16.svg" class="tooltip" alt="Неровная дорога"
+             data-hint="1.16 «Неровная дорога»">
+        <img src="img/signs/1_17.svg" class="tooltip" alt="Искусственная неровность"
+             data-hint="1.17 «Искусственная неровность»">
+        <img src="img/signs/1_18.svg" class="tooltip" alt="Выброс гравия"
+             data-hint="1.18 «Выброс гравия»">
+        <img src="img/signs/1_19.svg" class="tooltip" alt="Опасная обочина"
+             data-hint="1.19 «Опасная обочина»">
+    </p>
+
+    <!-- Ряд 2 -->
+    <p class="signs-row">
+        <img src="img/signs/1_20_1.svg" class="tooltip" alt="Сужение дороги"
+             data-hint="1.20.1 «Сужение дороги с обеих сторон»">
+        <img src="img/signs/1_20_2.svg" class="tooltip" alt="Сужение дороги справа"
+             data-hint="1.20.2 «Сужение дороги справа»">
+        <img src="img/signs/1_20_3.svg" class="tooltip" alt="Сужение дороги слева"
+             data-hint="1.20.3 «Сужение дороги слева»">
+        <img src="img/signs/1_21.svg" class="tooltip" alt="Двустороннее движение"
+             data-hint="1.21 «Двустороннее движение»">
+        <img src="img/signs/1_22.svg" class="tooltip" alt="Пешеходный переход"
+             data-hint="1.22 «Пешеходный переход»">
+    </p>
+
+    <!-- Ряд 3 -->
+    <p class="signs-row">
+        <img src="img/signs/1_23.svg" class="tooltip" alt="Дети"
+             data-hint="1.23 «Дети»">
+        <img src="img/signs/1_24.svg" class="tooltip" alt="Пересечение с велосипедной дорожкой"
+             data-hint="1.24 «Пересечение с велосипедной дорожкой»">
+        <img src="img/signs/1_25.svg" class="tooltip" alt="Дорожные работы"
+             data-hint="1.25 «Дорожные работы»">
+        <img src="img/signs/1_26.svg" class="tooltip" alt="Перегон скота"
+             data-hint="1.26 «Перегон скота»">
+        <img src="img/signs/1_27.svg" class="tooltip" alt="Дикие животные"
+             data-hint="1.27 «Дикие животные»">
+    </p>
+</body>
+</html>
